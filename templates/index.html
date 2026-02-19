@@ -1,12 +1,131 @@
 ﻿{% extends "base.html" %}
 
+{% block title %}qweretjr Markets - Next-Gen Stock Analysis{% endblock %}
+
 {% block content %}
-<div class="jumbotron">
-    <h1>Stock Market App</h1>
-    <p>Welcome to your stock tracking application</p>
-    <p>
-        <a href="/dashboard" class="btn btn-primary">Dashboard</a>
-        <a href="/all-stocks" class="btn btn-info">All Stocks</a>
-    </p>
-</div>
+<!-- Hero Section -->
+<section class="hero-section">
+  <div class="hero-content">
+    <h1 class="hero-title">
+      <span class="gradient-text">qweretjr</span> MARKETS
+    </h1>
+    <p class="hero-subtitle">Real-time stock analysis · Technical signals · Investment scores</p>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <span class="hero-stat-value">500+</span>
+        <span class="hero-stat-label">Stocks Tracked</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-value">24/7</span>
+        <span class="hero-stat-label">Live Data</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-value">3</span>
+        <span class="hero-stat-label">Signals</span>
+      </div>
+    </div>
+    <div class="hero-buttons">
+      <a href="/dashboard" class="btn-primary">
+        <i class="fas fa-chart-line"></i> VIEW DASHBOARD
+      </a>
+      <a href="/all-stocks" class="btn-secondary">
+        <i class="fas fa-table"></i> ALL STOCKS
+      </a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="visual-card">
+      <div class="visual-card-header">
+        <span class="visual-badge">TOP PERFORMER</span>
+        <span class="visual-change positive">+12.4%</span>
+      </div>
+      <div class="visual-card-body">
+        <span class="visual-symbol">NVDA</span>
+        <span class="visual-price">$892.34</span>
+      </div>
+      <div class="visual-card-footer">
+        <span class="visual-score">SCORE 98</span>
+        <span class="visual-action buy">BUY</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Features Grid -->
+<section class="features-section">
+  <h2 class="section-title">POWERFUL <span class="accent">FEATURES</span></h2>
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feature-icon pulse">📊</div>
+      <h3>Market Pulse</h3>
+      <p>Top 10 scored stocks with real-time sparklines and technical indicators</p>
+      <div class="feature-preview">
+        <div class="preview-dot"></div>
+        <div class="preview-dot"></div>
+        <div class="preview-dot"></div>
+      </div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon pulse">📈</div>
+      <h3>Full Stock Table</h3>
+      <p>Search, filter, and sort through 500+ stocks with BUY/HOLD/SELL signals</p>
+      <div class="feature-stats">
+        <span>🔍 500+</span>
+        <span>⚡ Real-time</span>
+      </div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon pulse">🔍</div>
+      <h3>Deep Analysis</h3>
+      <p>Price history charts, RSI, trends, predictions, and comprehensive statistics</p>
+      <div class="feature-chart">
+        <span></span><span></span><span></span><span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Market Preview -->
+<section class="preview-section">
+  <div class="preview-header">
+    <h2>🔥 MARKET <span class="accent">HIGHLIGHTS</span></h2>
+    <a href="/all-stocks" class="view-all">View All →</a>
+  </div>
+  <div class="preview-grid" id="homePreview">
+    <div class="loading-spinner-small"></div>
+  </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+// Load market preview for homepage
+async function loadPreview() {
+  try {
+    const res = await fetch('/api/stocks/top');
+    const data = await res.json();
+    const preview = document.getElementById('homePreview');
+    
+    if (data.stocks && data.stocks.length > 0) {
+      preview.innerHTML = data.stocks.slice(0, 3).map(stock => `
+        <div class="preview-item" onclick="window.location.href='/stock/${stock.symbol}'">
+          <div class="preview-symbol">${stock.symbol}</div>
+          <div class="preview-price">$${stock.price.toFixed(2)}</div>
+          <div class="preview-change ${stock.daily_percentage >= 0 ? 'positive' : 'negative'}">
+            ${stock.daily_percentage >= 0 ? '▲' : '▼'} ${Math.abs(stock.daily_percentage).toFixed(2)}%
+          </div>
+          <div class="preview-score">
+            <span class="score-badge" style="background: ${stock.score >= 70 ? '#00f5a0' : stock.score >= 40 ? '#ffaa00' : '#ff3d71'}">
+              ${stock.score}
+            </span>
+          </div>
+        </div>
+      `).join('');
+    }
+  } catch(e) {
+    document.getElementById('homePreview').innerHTML = '<div class="error-small">Failed to load preview</div>';
+  }
+}
+loadPreview();
+</script>
 {% endblock %}

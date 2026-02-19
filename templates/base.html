@@ -3,24 +3,40 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>{% block title %}ysra Markets{% endblock %}</title>
+  <title>{% block title %}qweretjr Markets{% endblock %}</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:wght@400;700&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
   {% block extra_head %}{% endblock %}
 </head>
 <body>
   <div class="bg-grid"></div>
   <div class="bg-glow"></div>
 
+  <!-- Animated background elements -->
+  <div class="floating-elements">
+    <div class="floating-element"></div>
+    <div class="floating-element"></div>
+    <div class="floating-element"></div>
+  </div>
+
   <header class="site-header">
     <div class="header-inner">
       <a href="/" class="logo">
-        <span class="logo-Ysra">ysra</span><span class="logo-markets">MARKETS</span>
+        <span class="logo-qweretjr">qweretjr</span><span class="logo-markets">MARKETS</span>
+        <span class="logo-badge">βETA</span>
       </a>
       <nav class="main-nav">
-        <a href="/" class="nav-link {% if request.endpoint=='dashboard' %}active{% endif %}">Dashboard</a>
-        <a href="/all-stocks" class="nav-link {% if request.endpoint=='all_stocks' %}active{% endif %}">All Stocks</a>
+        <a href="/" class="nav-link {% if request.endpoint == 'home' %}active{% endif %}">
+          <i class="fas fa-home"></i> Home
+        </a>
+        <a href="/dashboard" class="nav-link {% if request.endpoint == 'dashboard' %}active{% endif %}">
+          <i class="fas fa-chart-line"></i> Dashboard
+        </a>
+        <a href="/all-stocks" class="nav-link {% if request.endpoint == 'all_stocks' %}active{% endif %}">
+          <i class="fas fa-table"></i> All Stocks
+        </a>
       </nav>
       <div class="header-right">
         <div class="live-indicator">
@@ -34,8 +50,9 @@
       </div>
     </div>
     <div class="mobile-nav" id="mobileNav">
-      <a href="/" class="mobile-nav-link">📊 Dashboard</a>
-      <a href="/all-stocks" class="mobile-nav-link">📈 All Stocks</a>
+      <a href="/" class="mobile-nav-link"><i class="fas fa-home"></i> Home</a>
+      <a href="/dashboard" class="mobile-nav-link"><i class="fas fa-chart-line"></i> Dashboard</a>
+      <a href="/all-stocks" class="mobile-nav-link"><i class="fas fa-table"></i> All Stocks</a>
     </div>
   </header>
 
@@ -44,7 +61,15 @@
   </main>
 
   <footer class="site-footer">
-    <p>ysra Markets · Data via Yahoo Finance · Not financial advice · For informational use only</p>
+    <div class="footer-content">
+      <div class="footer-logo">qweretjr<span>MARKETS</span></div>
+      <p class="footer-disclaimer">Data via Yahoo Finance · Not financial advice · For informational use only</p>
+      <div class="footer-links">
+        <a href="#">Terms</a>
+        <a href="#">Privacy</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
   </footer>
 
   <script>

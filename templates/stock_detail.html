@@ -1,3 +1,8 @@
+{% extends "base.html" %}
+
+{% block title %}qweretjr Markets - {{ symbol }} Stock Details{% endblock %}
+
+{% block content %}
 <a href="/all-stocks" class="detail-back">← BACK TO ALL STOCKS</a>
 
 <div id="loadingState" class="loading-state">
@@ -347,3 +352,4 @@ async function loadChart() {
 
 loadDetail();
 </script>
+{% endblock %}
