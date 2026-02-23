@@ -2444,3 +2444,50 @@ footer a:not(.footer-logo):not(.footer-disclaimer) {
     position: absolute !important;
     pointer-events: none !important;
 }
+/* ===== FIX HAMBURGER MENU ===== */
+@media (max-width: 768px) {
+    /* Make sure hamburger is visible */
+    .hamburger {
+        display: flex !important;
+        position: relative !important;
+        z-index: 1000 !important;
+    }
+    
+    /* Hide desktop nav */
+    .main-nav {
+        display: none !important;
+    }
+    
+    /* Style hamburger lines */
+    .hamburger span {
+        display: block !important;
+        width: 22px !important;
+        height: 2px !important;
+        background-color: white !important;
+        margin: 4px 0 !important;
+        transition: 0.3s !important;
+    }
+    
+    /* Mobile nav menu */
+    .mobile-nav {
+        position: absolute !important;
+        top: 60px !important;
+        left: 0 !important;
+        width: 100% !important;
+        background: var(--bg-header) !important;
+        z-index: 999 !important;
+        display: none !important;
+    }
+    
+    .mobile-nav.open {
+        display: block !important;
+    }
+    
+    .mobile-nav-link {
+        display: block !important;
+        padding: 15px !important;
+        color: white !important;
+        text-decoration: none !important;
+        border-bottom: 1px solid var(--border) !important;
+    }
+}
