@@ -1290,4 +1290,7 @@ h6 { font-size: 1rem; }
 }
 
 .modern-table th:hover {
-  color: var(--primary
+  color: var(--primary);
+}
+
+.table
