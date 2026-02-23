@@ -2425,3 +2425,22 @@ h6 { font-size: 1rem; }
         margin: 2px 0 !important;
     }
 }
+/* ===== HIDE FOOTER LINKS EVERYWHERE ===== */
+.footer-links,
+.footer-links a,
+.footer-links *,
+div[class*="footer-links"],
+a[href="#"],
+a[href="/terms"],
+a[href="/privacy"],
+a[href="/contact"],
+footer a:not(.footer-logo):not(.footer-disclaimer) {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    height: 0 !important;
+    width: 0 !important;
+    overflow: hidden !important;
+    position: absolute !important;
+    pointer-events: none !important;
+}
