@@ -2309,3 +2309,48 @@ h6 { font-size: 1rem; }
         overflow: hidden !important;
     }
 }
+/* ===== HIDE FOOTER LINKS ON MOBILE ===== */
+@media (max-width: 768px) {
+    .footer-links {
+        display: none !important;
+    }
+}
+
+/* ===== HIDE FEATURES SECTION ON MOBILE ===== */
+@media (max-width: 768px) {
+    .features-section {
+        display: none !important;
+    }
+}
+
+/* ===== HIDE FOOTER LINKS ON MOBILE (STRONGER VERSION) ===== */
+@media (max-width: 768px) {
+    .footer-links,
+    .footer-links a,
+    div.footer-links {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        height: 0 !important;
+        width: 0 !important;
+        overflow: hidden !important;
+    }
+}
+
+/* ===== FORCE HIDE FOOTER LINKS ON MOBILE ===== */
+@media (max-width: 768px) {
+    .footer-links,
+    .footer-links a,
+    .footer-links *,
+    div[class*="footer-links"],
+    div.footer-links {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        height: 0 !important;
+        width: 0 !important;
+        overflow: hidden !important;
+        position: absolute !important;
+        pointer-events: none !important;
+    }
+}
