@@ -2444,45 +2444,93 @@ footer a:not(.footer-logo):not(.footer-disclaimer) {
     position: absolute !important;
     pointer-events: none !important;
 }
-/* ===== FIX MISSING HAMBURGER MENU ===== */
+/* ===== UNIVERSAL HAMBURGER FIX FOR ALL DIMENSIONS ===== */
 @media (max-width: 768px) {
-    /* Force hamburger to show */
+    /* Force hamburger to be visible */
     .hamburger {
         display: flex !important;
         visibility: visible !important;
         opacity: 1 !important;
         position: relative !important;
-        z-index: 9999 !important;
+        z-index: 999999 !important;
         background: transparent !important;
         border: none !important;
         cursor: pointer !important;
-        padding: 10px !important;
+        padding: 8px !important;
+        margin-left: 5px !important;
+        pointer-events: auto !important;
     }
     
-    /* Style the hamburger lines */
+    /* Hamburger lines */
     .hamburger span {
         display: block !important;
-        width: 25px !important;
-        height: 3px !important;
-        background-color: var(--primary) !important;
+        width: 22px !important;
+        height: 2px !important;
+        background-color: #00f5a0 !important;
         margin: 4px 0 !important;
         transition: 0.3s !important;
     }
     
-    /* Make sure desktop nav is hidden */
+    /* Header right container */
+    .header-right {
+        display: flex !important;
+        align-items: center !important;
+        gap: 8px !important;
+    }
+    
+    /* Hide desktop nav */
     .main-nav {
         display: none !important;
     }
     
-    /* Position header right items properly */
-    .header-right {
-        display: flex !important;
-        align-items: center !important;
-        gap: 10px !important;
-    }
-    
-    /* Ensure clock and live indicator are visible */
+    /* Make sure clock and live are visible */
     .clock, .live-indicator {
         display: flex !important;
+        font-size: 11px !important;
+    }
+    
+    /* Mobile menu */
+    .mobile-nav {
+        position: absolute !important;
+        top: 100% !important;
+        left: 0 !important;
+        width: 100% !important;
+        background: #1a2535 !important;
+        z-index: 99999 !important;
+        display: none !important;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.3) !important;
+    }
+    
+    .mobile-nav.open {
+        display: block !important;
+    }
+    
+    .mobile-nav-link {
+        display: block !important;
+        padding: 15px !important;
+        color: white !important;
+        text-decoration: none !important;
+        border-bottom: 1px solid #2a3747 !important;
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+    .clock {
+        font-size: 10px !important;
+        padding: 3px 6px !important;
+    }
+    
+    .live-text {
+        font-size: 9px !important;
+    }
+    
+    .hamburger {
+        padding: 5px !important;
+    }
+    
+    .hamburger span {
+        width: 20px !important;
+        margin: 3px 0 !important;
     }
 }
