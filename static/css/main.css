@@ -2270,3 +2270,9 @@ h6 { font-size: 1rem; }
         font-size: 7px !important;
     }
 }
+/* ===== HIDE FOOTER LINKS ON MOBILE ===== */
+@media (max-width: 768px) {
+    .footer-links {
+        display: none !important;
+    }
+}
