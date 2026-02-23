@@ -1970,143 +1970,112 @@ h6 { font-size: 1rem; }
   background: var(--primary);
   color: var(--bg-dark);
 }
-/* ===== COMPLETE MOBILE RESPONSIVE FIXES ===== */
+
+/* ===== COMPLETE MOBILE FIXES FOR ALL PAGES ===== */
+
+/* Fix for ALL pages on mobile */
 @media (max-width: 768px) {
-    /* General Layout */
+    /* Global fixes */
     .site-main {
-        padding: 0 15px !important;
-        margin: 1rem auto !important;
+        padding: 0 12px !important;
     }
 
-    /* Header & Navigation */
-    .main-nav {
-        display: none !important;
+    h1, h2, h3, h4, h5, h6 {
+        word-break: break-word !important;
     }
-    
-    .hamburger {
-        display: flex !important;
-    }
-    
-    .header-inner {
-        padding: 0 15px !important;
-    }
-    
-    .logo {
-        font-size: 1.2rem !important;
-    }
-    
-    .logo-badge {
-        right: -20px !important;
-        font-size: 0.5rem !important;
-    }
-    
-    .clock {
-        font-size: 0.7rem !important;
-        padding: 0.2rem 0.5rem !important;
-    }
-    
-    .live-text {
-        font-size: 0.6rem !important;
-    }
-    
-    /* HERO SECTION FIXES */
+
+    /* ===== HOMEPAGE FIXES ===== */
     .hero-section {
-        grid-template-columns: 1fr !important;
-        gap: 2rem !important;
-        padding: 1rem 0 !important;
+        flex-direction: column !important;
+        display: flex !important;
+        padding: 20px 0 !important;
+        gap: 20px !important;
+    }
+
+    .hero-content {
+        width: 100% !important;
         text-align: center !important;
     }
-    
+
     .hero-title {
-        font-size: 2rem !important;
+        font-size: 28px !important;
         line-height: 1.2 !important;
+        margin-bottom: 10px !important;
     }
-    
+
     .hero-subtitle {
-        font-size: 0.9rem !important;
-        margin-bottom: 1.5rem !important;
+        font-size: 13px !important;
+        margin-bottom: 20px !important;
         white-space: normal !important;
     }
-    
+
     .hero-stats {
-        justify-content: center !important;
-        gap: 1.5rem !important;
+        display: flex !important;
         flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 15px !important;
+        margin-bottom: 20px !important;
     }
-    
+
+    .hero-stat {
+        flex: 0 0 auto !important;
+        min-width: 70px !important;
+    }
+
     .hero-stat-value {
-        font-size: 1.5rem !important;
+        font-size: 18px !important;
     }
-    
+
     .hero-stat-label {
-        font-size: 0.7rem !important;
+        font-size: 10px !important;
     }
-    
+
     .hero-buttons {
+        display: flex !important;
         flex-direction: column !important;
-        gap: 0.8rem !important;
+        gap: 10px !important;
         width: 100% !important;
     }
-    
+
     .btn-primary, .btn-secondary {
         width: 100% !important;
-        padding: 0.8rem !important;
-        font-size: 0.9rem !important;
+        padding: 12px !important;
+        font-size: 14px !important;
         justify-content: center !important;
     }
-    
-    /* Visual Card */
+
     .hero-visual {
-        margin-top: 1rem !important;
+        width: 100% !important;
     }
-    
+
     .visual-card {
-        padding: 1.2rem !important;
+        padding: 15px !important;
         transform: rotate(2deg) !important;
-        margin: 0 10px !important;
     }
-    
+
     .visual-symbol {
-        font-size: 1.8rem !important;
+        font-size: 22px !important;
     }
-    
+
     .visual-price {
-        font-size: 1.3rem !important;
+        font-size: 16px !important;
     }
-    
-    /* Features Section */
+
+    /* ===== FEATURES SECTION ===== */
     .features-grid {
         grid-template-columns: 1fr !important;
-        gap: 1rem !important;
-        padding: 0 10px !important;
+        gap: 15px !important;
     }
-    
+
     .feature-card {
-        padding: 1.5rem !important;
+        padding: 20px !important;
     }
-    
+
     .section-title {
-        font-size: 1.8rem !important;
+        font-size: 24px !important;
     }
-    
-    /* Preview Section */
-    .preview-grid {
-        grid-template-columns: 1fr !important;
-        gap: 0.8rem !important;
-    }
-    
-    .preview-header {
-        flex-direction: column !important;
-        align-items: flex-start !important;
-        gap: 10px !important;
-    }
-    
-    .preview-item {
-        padding: 0.8rem !important;
-        font-size: 0.9rem !important;
-    }
-    
-    /* ALL STOCKS PAGE FIXES */
+
+    /* ===== ALL STOCKS PAGE ===== */
     /* Header */
     div[style*="display: flex"]:has(h2):has(#totalCount) {
         flex-direction: column !important;
@@ -2114,317 +2083,261 @@ h6 { font-size: 1rem; }
         gap: 10px !important;
         width: 100% !important;
     }
-    
+
     div[style*="display: flex"]:has(h2) h2 {
-        font-size: 1.5rem !important;
+        font-size: 22px !important;
+        margin: 0 !important;
     }
-    
-    /* Market Status Bar */
+
+    /* Market status */
     div[style*="background: #0f1622"]:has(#marketStatus) {
         flex-direction: column !important;
         align-items: flex-start !important;
         gap: 8px !important;
         padding: 12px !important;
     }
-    
-    /* Search and Filter */
+
+    /* Search and filter */
     div[style*="display: flex"]:has(#searchBox) {
         flex-direction: column !important;
         gap: 10px !important;
         width: 100% !important;
     }
-    
+
     #searchBox, #filterSelect {
         width: 100% !important;
+        padding: 12px !important;
         font-size: 16px !important;
     }
-    
-    /* Table Container */
+
+    /* Table */
     #tableView {
         overflow-x: auto !important;
-        -webkit-overflow-scrolling: touch !important;
-        margin: 0 -15px !important;
-        padding: 0 15px !important;
-        width: calc(100% + 30px) !important;
+        margin: 0 -12px !important;
+        padding: 0 12px !important;
+        width: calc(100% + 24px) !important;
     }
-    
+
     #tableView table {
-        min-width: 800px !important;
+        min-width: 700px !important;
+        font-size: 12px !important;
     }
-    
-    /* Table Rows */
+
     .table-row td {
-        padding: 8px 6px !important;
-        font-size: 12px !important;
+        padding: 8px 5px !important;
     }
-    
+
     .table-row td strong {
-        font-size: 12px !important;
+        font-size: 11px !important;
     }
-    
+
     .table-row td small {
         font-size: 9px !important;
-        max-width: 70px !important;
     }
-    
-    /* Badges */
-    .signal-badge, .status-badge {
-        padding: 3px 5px !important;
-        font-size: 10px !important;
-    }
-    
+
     /* Pagination */
     #pagination {
         gap: 4px !important;
     }
-    
+
     .page-btn {
         padding: 6px 8px !important;
-        font-size: 12px !important;
-        min-width: 32px !important;
+        font-size: 11px !important;
+        min-width: 30px !important;
     }
-    
-    /* DASHBOARD PAGE FIXES */
+
+    /* ===== DASHBOARD PAGE ===== */
     div[style*="display: flex"]:has(h2):has(#lastUpdated) {
         flex-direction: column !important;
         align-items: flex-start !important;
         gap: 10px !important;
     }
-    
-    #lastUpdated {
-        align-self: flex-start !important;
-        font-size: 0.8rem !important;
-    }
-    
+
     #cardsGrid {
         grid-template-columns: 1fr !important;
         gap: 12px !important;
     }
-    
+
     .stock-card {
-        padding: 12px !important;
+        padding: 15px !important;
     }
-    
+
     .card-symbol {
-        font-size: 1.2rem !important;
+        font-size: 18px !important;
     }
-    
+
     .card-medal {
-        font-size: 1.3rem !important;
+        font-size: 16px !important;
     }
-    
+
     .card-price {
-        font-size: 1.6rem !important;
+        font-size: 22px !important;
     }
-    
+
     .card-change {
-        font-size: 0.9rem !important;
+        font-size: 13px !important;
+        padding: 3px 8px !important;
     }
-    
+
     .card-stats {
         gap: 8px !important;
     }
-    
+
     .stat-label {
-        font-size: 0.6rem !important;
+        font-size: 10px !important;
     }
-    
+
     .stat-value {
-        font-size: 0.9rem !important;
+        font-size: 14px !important;
     }
-    
+
     .card-trend {
-        font-size: 0.8rem !important;
-        padding: 6px !important;
+        font-size: 12px !important;
+        padding: 8px !important;
     }
-    
+
     .card-score {
-        font-size: 1rem !important;
+        font-size: 14px !important;
     }
-    
-    /* STOCK DETAIL PAGE FIXES */
+
+    /* ===== STOCK DETAIL PAGE ===== */
     .detail-back {
-        margin-bottom: 1rem !important;
-        padding: 0.5rem 1rem !important;
-        font-size: 0.9rem !important;
+        margin-bottom: 15px !important;
+        padding: 8px 15px !important;
+        font-size: 13px !important;
     }
-    
+
     .detail-hero {
         grid-template-columns: 1fr !important;
         text-align: center !important;
-        padding: 1.5rem !important;
-        gap: 1rem !important;
+        padding: 20px !important;
+        gap: 10px !important;
     }
-    
+
     .detail-symbol {
-        font-size: 2.2rem !important;
+        font-size: 28px !important;
     }
-    
+
     .detail-name {
-        font-size: 1rem !important;
+        font-size: 14px !important;
     }
-    
+
     .detail-price {
-        font-size: 2.5rem !important;
+        font-size: 32px !important;
     }
-    
+
     .detail-change-line {
-        font-size: 1rem !important;
+        font-size: 14px !important;
     }
-    
-    /* Price Cards */
+
     .price-cards {
         grid-template-columns: repeat(2, 1fr) !important;
-        gap: 0.8rem !important;
+        gap: 8px !important;
     }
-    
+
     .price-card {
-        padding: 1rem !important;
+        padding: 12px !important;
     }
-    
+
     .price-card-value {
-        font-size: 1.2rem !important;
+        font-size: 16px !important;
     }
-    
+
     .price-card-label {
-        font-size: 0.7rem !important;
+        font-size: 10px !important;
     }
-    
-    /* Chart */
-    .chart-section {
-        padding: 1rem !important;
-    }
-    
+
     .chart-canvas-wrap {
-        height: 250px !important;
+        height: 220px !important;
     }
-    
-    /* Stats Grid */
+
     .stats-grid {
         grid-template-columns: repeat(2, 1fr) !important;
-        gap: 0.8rem !important;
+        gap: 8px !important;
     }
-    
+
     .stat-card {
-        padding: 0.8rem !important;
+        padding: 12px !important;
     }
-    
+
     .stat-value {
-        font-size: 1rem !important;
+        font-size: 13px !important;
     }
-    
+
     .stat-label {
-        font-size: 0.65rem !important;
+        font-size: 9px !important;
     }
-    
-    /* Decision Panel */
+
     .decision-panel {
         grid-template-columns: 1fr !important;
-        gap: 1.5rem !important;
-        padding: 1.5rem !important;
+        padding: 20px !important;
+        gap: 20px !important;
     }
-    
+
     .decision-action {
-        font-size: 2.2rem !important;
+        font-size: 28px !important;
     }
-    
-    .signals-list {
-        gap: 0.5rem !important;
-    }
-    
+
     .signal-item {
-        padding: 0.5rem !important;
-        font-size: 0.8rem !important;
+        padding: 8px !important;
+        font-size: 12px !important;
     }
-    
-    .signal-dot {
-        width: 6px !important;
-        height: 6px !important;
-    }
-    
-    /* Footer */
+
+    /* ===== FOOTER ===== */
     .footer-links {
         flex-direction: column !important;
-        gap: 0.8rem !important;
+        gap: 8px !important;
     }
-    
+
     .footer-disclaimer {
-        font-size: 0.7rem !important;
+        font-size: 11px !important;
+    }
+
+    .footer-logo {
+        font-size: 18px !important;
     }
 }
 
-/* Extra Small Phones */
+/* Extra small phones */
 @media (max-width: 480px) {
     .hero-title {
-        font-size: 1.8rem !important;
+        font-size: 24px !important;
     }
-    
-    .hero-subtitle {
-        font-size: 0.8rem !important;
-    }
-    
+
     .hero-stat-value {
-        font-size: 1.2rem !important;
+        font-size: 16px !important;
     }
-    
-    .visual-symbol {
-        font-size: 1.5rem !important;
-    }
-    
-    .visual-price {
-        font-size: 1.1rem !important;
-    }
-    
-    /* Hide less important columns on ALL STOCKS */
+
     #tableView table {
         min-width: 650px !important;
     }
-    
+
+    /* Hide less important columns on very small screens */
     .table-row td:nth-child(6),
     .table-row th:nth-child(6) {
         display: none !important;
     }
-    
-    /* Detail page - single column on very small screens */
+
     .price-cards {
         grid-template-columns: 1fr !important;
     }
-    
+
     .stats-grid {
         grid-template-columns: 1fr !important;
     }
+
+    .detail-symbol {
+        font-size: 24px !important;
+    }
+
+    .detail-price {
+        font-size: 28px !important;
+    }
 }
 
-/* Touch target improvements */
+/* Fix for inputs on iOS */
 @media (max-width: 768px) {
-    .table-row,
-    .page-btn,
-    .filter-btn,
-    .view-btn,
-    .mobile-nav-link,
-    .detail-back,
-    .stock-card,
-    .btn-primary,
-    .btn-secondary,
-    .preview-item,
-    .feature-card {
-        min-height: 44px !important;
-    }
-    
     input, select, button {
         font-size: 16px !important;
-    }
-}
-
-/* Mobile scrollbar */
-@media (max-width: 768px) {
-    ::-webkit-scrollbar {
-        width: 3px !important;
-        height: 3px !important;
-    }
-    
-    ::-webkit-scrollbar-thumb {
-        background: #00f5a0 !important;
-        border-radius: 3px !important;
     }
 }
