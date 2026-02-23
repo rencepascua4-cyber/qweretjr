@@ -2382,3 +2382,46 @@ h6 { font-size: 1rem; }
         font-size: 10px !important;
     }
 }
+/* ===== ULTIMATE FOOTER LINK HIDER ===== */
+@media (max-width: 768px) {
+    /* Target everything that might be footer links */
+    .footer-links,
+    .footer-links a,
+    .footer-links *,
+    footer a,
+    .site-footer a,
+    div:has(> a[href="#"]),
+    div:has(> a[href="/terms"]),
+    div:has(> a[href="/privacy"]),
+    div:has(> a[href="/contact"]),
+    a[href="#"],
+    a[href="/terms"],
+    a[href="/privacy"],
+    a[href="/contact"] {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        height: 0 !important;
+        width: 0 !important;
+        overflow: hidden !important;
+        position: absolute !important;
+        pointer-events: none !important;
+        z-index: -9999 !important;
+    }
+    
+    /* Make footer clean */
+    .footer-content {
+        padding: 5px !important;
+        margin: 0 !important;
+    }
+    
+    .footer-logo {
+        font-size: 10px !important;
+        margin: 0 !important;
+    }
+    
+    .footer-disclaimer {
+        font-size: 7px !important;
+        margin: 2px 0 !important;
+    }
+}
