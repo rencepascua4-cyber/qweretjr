@@ -15,7 +15,7 @@ jobs:
       - name: Set up Python version
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11'  # Changed from 3.12 to 3.11
+          python-version: '3.11'
           
       - name: Create and start virtual environment
         run: |
@@ -46,8 +46,13 @@ jobs:
         with:
           name: python-app
           
+      - name: Azure Login
+        uses: azure/login@v1
+        with:
+          creds: '{"clientId":"${{ secrets.AZUREAPPSERVICE_CLIENTID_5A2559BC716F45BC94B3F42FEC558C6F }}","subscriptionId":"${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_41F1E208D6464499865A61A52CB269D2 }}","tenantId":"${{ secrets.AZUREAPPSERVICE_TENANTID_67FF15610C4C48CF8CE742E39C64DB62 }}"}'
+          
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v3
         with:
           app-name: 'stocks'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE }}
+          package: .
