@@ -1294,4 +1294,260 @@ h6 { font-size: 1rem; }
 }
 
 .table-row {
-  border-bottom: 1px
+  border-bottom: 1px solid var(--bg-header);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.table-row:hover {
+  background: rgba(0,245,160,0.05);
+}
+
+.table-row td {
+  padding: 1rem;
+}
+
+/* ===== ULTIMATE FIX - NO SCROLLING, NO SWIPING ===== */
+@media (max-width: 768px) {
+    /* Force everything to fit in viewport */
+    html, body {
+        height: 100% !important;
+        overflow: hidden !important;
+    }
+    
+    body {
+        display: flex !important;
+        flex-direction: column !important;
+        font-size: 10px !important;
+    }
+    
+    .site-header {
+        flex-shrink: 0 !important;
+        padding: 5px 0 !important;
+    }
+    
+    .header-inner {
+        padding: 0 5px !important;
+    }
+    
+    .logo {
+        font-size: 14px !important;
+    }
+    
+    .logo-badge {
+        font-size: 6px !important;
+        right: -12px !important;
+        top: -3px !important;
+    }
+    
+    .clock, .live-text {
+        font-size: 8px !important;
+    }
+    
+    .site-main {
+        flex: 1 !important;
+        overflow-y: auto !important;
+        padding: 5px !important;
+        margin: 0 !important;
+    }
+    
+    /* HERO SECTION - COMPACT */
+    .hero-section {
+        display: block !important;
+        padding: 2px 0 !important;
+    }
+    
+    .hero-title {
+        font-size: 16px !important;
+        margin: 2px 0 !important;
+    }
+    
+    .hero-subtitle {
+        font-size: 8px !important;
+        margin: 2px 0 !important;
+    }
+    
+    .hero-stats {
+        display: flex !important;
+        justify-content: space-around !important;
+        margin: 2px 0 !important;
+        gap: 2px !important;
+    }
+    
+    .hero-stat-value {
+        font-size: 12px !important;
+    }
+    
+    .hero-stat-label {
+        font-size: 6px !important;
+    }
+    
+    .hero-buttons {
+        display: flex !important;
+        gap: 3px !important;
+        margin: 3px 0 !important;
+    }
+    
+    .btn-primary, .btn-secondary {
+        padding: 4px !important;
+        font-size: 8px !important;
+    }
+    
+    /* VISUAL CARD - SMALL */
+    .hero-visual {
+        margin-top: 3px !important;
+    }
+    
+    .visual-card {
+        padding: 5px !important;
+    }
+    
+    .visual-symbol {
+        font-size: 14px !important;
+    }
+    
+    .visual-price {
+        font-size: 10px !important;
+    }
+    
+    .visual-badge {
+        font-size: 6px !important;
+        padding: 1px 3px !important;
+    }
+    
+    .visual-change {
+        font-size: 7px !important;
+    }
+    
+    .visual-action {
+        font-size: 6px !important;
+        padding: 2px 4px !important;
+    }
+    
+    .visual-score {
+        font-size: 6px !important;
+    }
+    
+    /* FEATURES - HIDE IF NEEDED */
+    .features-section {
+        display: none !important;
+    }
+    
+    /* DASHBOARD CARDS */
+    #cardsGrid {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 3px !important;
+    }
+    
+    .stock-card {
+        padding: 4px !important;
+    }
+    
+    .card-symbol {
+        font-size: 10px !important;
+    }
+    
+    .card-medal {
+        font-size: 8px !important;
+    }
+    
+    .card-price {
+        font-size: 10px !important;
+    }
+    
+    .card-change {
+        font-size: 7px !important;
+        padding: 1px 3px !important;
+    }
+    
+    .stat-label {
+        font-size: 5px !important;
+    }
+    
+    .stat-value {
+        font-size: 7px !important;
+    }
+    
+    .card-trend {
+        font-size: 6px !important;
+        padding: 2px !important;
+    }
+    
+    .card-score {
+        font-size: 7px !important;
+    }
+    
+    /* ALL STOCKS TABLE */
+    #tableView {
+        height: 100% !important;
+        overflow: auto !important;
+    }
+    
+    #tableView table {
+        font-size: 7px !important;
+    }
+    
+    .table-row td {
+        padding: 2px !important;
+    }
+    
+    .signal-badge, .status-badge {
+        padding: 1px 2px !important;
+        font-size: 6px !important;
+    }
+    
+    /* DETAIL PAGE */
+    .detail-hero {
+        padding: 5px !important;
+    }
+    
+    .detail-symbol {
+        font-size: 16px !important;
+    }
+    
+    .detail-price {
+        font-size: 18px !important;
+    }
+    
+    .price-cards {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 3px !important;
+    }
+    
+    .price-card {
+        padding: 3px !important;
+    }
+    
+    .price-card-value {
+        font-size: 9px !important;
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 3px !important;
+    }
+    
+    .stat-card {
+        padding: 3px !important;
+    }
+    
+    .stat-value {
+        font-size: 8px !important;
+    }
+    
+    .decision-panel {
+        padding: 5px !important;
+    }
+}
+
+/* Extra tiny */
+@media (max-width: 375px) {
+    #cardsGrid {
+        grid-template-columns: 1fr !important;
+    }
+    
+    .hero-title {
+        font-size: 14px !important;
+    }
+}
