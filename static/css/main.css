@@ -2444,21 +2444,46 @@ footer a:not(.footer-logo):not(.footer-disclaimer) {
     position: absolute !important;
     pointer-events: none !important;
 }
-/* ===== UNIVERSAL HAMBURGER FIX FOR ALL DIMENSIONS ===== */
+/* ===== HAMBURGER VISIBILITY FIX ===== */
 @media (max-width: 768px) {
-    /* Force hamburger to be visible */
+    /* Make header-inner flex properly */
+    .header-inner {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        width: 100% !important;
+        padding: 0 10px !important;
+        position: relative !important;
+    }
+    
+    /* Push logo to left */
+    .logo {
+        margin-right: auto !important;
+        font-size: 14px !important;
+    }
+    
+    /* Keep header-right items together */
+    .header-right {
+        display: flex !important;
+        align-items: center !important;
+        gap: 5px !important;
+        flex-shrink: 0 !important;
+        margin-left: auto !important;
+    }
+    
+    /* Force hamburger to show */
     .hamburger {
         display: flex !important;
         visibility: visible !important;
         opacity: 1 !important;
         position: relative !important;
-        z-index: 999999 !important;
         background: transparent !important;
         border: none !important;
         cursor: pointer !important;
-        padding: 8px !important;
-        margin-left: 5px !important;
-        pointer-events: auto !important;
+        padding: 8px 5px !important;
+        margin: 0 !important;
+        z-index: 10000 !important;
+        flex-shrink: 0 !important;
     }
     
     /* Hamburger lines */
@@ -2468,14 +2493,13 @@ footer a:not(.footer-logo):not(.footer-disclaimer) {
         height: 2px !important;
         background-color: #00f5a0 !important;
         margin: 4px 0 !important;
-        transition: 0.3s !important;
     }
     
-    /* Header right container */
-    .header-right {
-        display: flex !important;
-        align-items: center !important;
-        gap: 8px !important;
+    /* Ensure clock and live fit */
+    .clock, .live-indicator {
+        font-size: 10px !important;
+        padding: 4px 6px !important;
+        white-space: nowrap !important;
     }
     
     /* Hide desktop nav */
@@ -2483,54 +2507,40 @@ footer a:not(.footer-logo):not(.footer-disclaimer) {
         display: none !important;
     }
     
-    /* Make sure clock and live are visible */
-    .clock, .live-indicator {
-        display: flex !important;
-        font-size: 11px !important;
-    }
-    
-    /* Mobile menu */
+    /* Mobile menu styling */
     .mobile-nav {
         position: absolute !important;
         top: 100% !important;
         left: 0 !important;
         width: 100% !important;
         background: #1a2535 !important;
-        z-index: 99999 !important;
-        display: none !important;
-        box-shadow: 0 5px 10px rgba(0,0,0,0.3) !important;
-    }
-    
-    .mobile-nav.open {
-        display: block !important;
-    }
-    
-    .mobile-nav-link {
-        display: block !important;
-        padding: 15px !important;
-        color: white !important;
-        text-decoration: none !important;
-        border-bottom: 1px solid #2a3747 !important;
+        z-index: 9999 !important;
     }
 }
 
-/* Extra small devices */
-@media (max-width: 480px) {
-    .clock {
-        font-size: 10px !important;
-        padding: 3px 6px !important;
+/* Extra small screens */
+@media (max-width: 380px) {
+    .logo {
+        font-size: 12px !important;
     }
     
-    .live-text {
-        font-size: 9px !important;
+    .logo-badge {
+        font-size: 5px !important;
+        right: -15px !important;
+    }
+    
+    .clock, .live-indicator {
+        font-size: 8px !important;
+        padding: 3px 4px !important;
     }
     
     .hamburger {
-        padding: 5px !important;
+        padding: 5px 3px !important;
     }
     
     .hamburger span {
-        width: 20px !important;
+        width: 18px !important;
+        height: 2px !important;
         margin: 3px 0 !important;
     }
 }
