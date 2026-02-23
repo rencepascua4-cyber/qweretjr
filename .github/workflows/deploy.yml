@@ -27,13 +27,13 @@ jobs:
           python -m pip install --upgrade pip
           pip install setuptools==65.5.0 wheel
           
-      - name: Try installing numpy with pre-built wheel
+      - name: Install numpy compatible with Python 3.12
         run: |
-          pip install --only-binary :all: numpy==1.24.3
+          pip install numpy==1.26.4
           
-      - name: Install pandas with pre-built wheel
+      - name: Install pandas compatible with Python 3.12
         run: |
-          pip install --only-binary :all: pandas==2.0.3
+          pip install pandas==2.2.3
           
       - name: Install remaining dependencies
         run: |
