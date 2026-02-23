@@ -2444,103 +2444,100 @@ footer a:not(.footer-logo):not(.footer-disclaimer) {
     position: absolute !important;
     pointer-events: none !important;
 }
-/* ===== HAMBURGER VISIBILITY FIX ===== */
+/* ===== FORCE ALL HEADER ELEMENTS TO FIT ===== */
 @media (max-width: 768px) {
-    /* Make header-inner flex properly */
+    /* Make header compact */
+    .site-header {
+        padding: 5px 0 !important;
+    }
+    
     .header-inner {
         display: flex !important;
         justify-content: space-between !important;
         align-items: center !important;
-        width: 100% !important;
-        padding: 0 10px !important;
-        position: relative !important;
+        padding: 0 5px !important;
+        gap: 5px !important;
     }
     
-    /* Push logo to left */
+    /* Smaller logo */
     .logo {
-        margin-right: auto !important;
-        font-size: 14px !important;
+        font-size: 12px !important;
+        white-space: nowrap !important;
+        display: flex !important;
+        align-items: center !important;
     }
     
-    /* Keep header-right items together */
+    .logo-badge {
+        font-size: 5px !important;
+        padding: 1px 3px !important;
+        right: -15px !important;
+        top: -3px !important;
+    }
+    
+    /* Header right - force everything in one line */
     .header-right {
         display: flex !important;
         align-items: center !important;
-        gap: 5px !important;
+        gap: 3px !important;
         flex-shrink: 0 !important;
-        margin-left: auto !important;
     }
     
-    /* Force hamburger to show */
+    /* Make LIVE indicator very small */
+    .live-indicator {
+        padding: 2px 4px !important;
+        gap: 2px !important;
+    }
+    
+    .live-dot {
+        width: 4px !important;
+        height: 4px !important;
+    }
+    
+    .live-text {
+        font-size: 7px !important;
+    }
+    
+    /* Make clock small */
+    .clock {
+        font-size: 7px !important;
+        padding: 2px 4px !important;
+    }
+    
+    /* Force hamburger to always show */
     .hamburger {
         display: flex !important;
         visibility: visible !important;
         opacity: 1 !important;
-        position: relative !important;
+        padding: 3px !important;
+        margin: 0 !important;
         background: transparent !important;
         border: none !important;
-        cursor: pointer !important;
-        padding: 8px 5px !important;
-        margin: 0 !important;
-        z-index: 10000 !important;
-        flex-shrink: 0 !important;
     }
     
-    /* Hamburger lines */
     .hamburger span {
-        display: block !important;
-        width: 22px !important;
+        width: 16px !important;
         height: 2px !important;
+        margin: 2px 0 !important;
         background-color: #00f5a0 !important;
-        margin: 4px 0 !important;
-    }
-    
-    /* Ensure clock and live fit */
-    .clock, .live-indicator {
-        font-size: 10px !important;
-        padding: 4px 6px !important;
-        white-space: nowrap !important;
     }
     
     /* Hide desktop nav */
     .main-nav {
         display: none !important;
     }
-    
-    /* Mobile menu styling */
-    .mobile-nav {
-        position: absolute !important;
-        top: 100% !important;
-        left: 0 !important;
-        width: 100% !important;
-        background: #1a2535 !important;
-        z-index: 9999 !important;
-    }
 }
 
-/* Extra small screens */
-@media (max-width: 380px) {
+/* For very tiny screens */
+@media (max-width: 350px) {
     .logo {
-        font-size: 12px !important;
+        font-size: 10px !important;
     }
     
-    .logo-badge {
-        font-size: 5px !important;
-        right: -15px !important;
-    }
-    
-    .clock, .live-indicator {
-        font-size: 8px !important;
-        padding: 3px 4px !important;
-    }
-    
-    .hamburger {
-        padding: 5px 3px !important;
+    .live-text, .clock {
+        font-size: 6px !important;
     }
     
     .hamburger span {
-        width: 18px !important;
-        height: 2px !important;
-        margin: 3px 0 !important;
+        width: 14px !important;
     }
 }
